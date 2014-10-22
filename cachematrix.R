@@ -1,13 +1,13 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
-
+## This function is a slight modification of the example makeVector() function
+## It creates an list to hold both a matrix and it's cached version
 makeCacheMatrix <- function(x = matrix()) {
 
   inverse <- NULL
-  set <- function(x) {
-    matrix <<- x
+  set <- function(y) {
+    x <<- y
     inverse <<- NULL
   }
   get <- function() x
@@ -20,8 +20,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
 
+## This function is a slight modification of the example cachemean() function
+## Takes a list created by makeCacheMatrix.
+## If the inverse is cached, return the cached version.  Otherwise compute, 
+## cache and return the inverse.
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   inverse <- x$getinverse()
